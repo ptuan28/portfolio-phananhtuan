@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Phan Anh Tuấn | 25112120 | VJU</title>
+  <meta name="description" content="Portfolio cá nhân của sinh viên Phan Anh Tuấn – MSSV 25112120 – Ngành Khoa học và Kỹ thuật Máy tính, Đại học Việt Nhật." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== DECORATIVE BLOBS ===== -->
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+
+<!-- ===== FLOATING STICKERS ===== -->
+<div class="sticker sticker-1">🌸</div>
+<div class="sticker sticker-2">⭐</div>
+<div class="sticker sticker-3">💫</div>
+<div class="sticker sticker-4">🍀</div>
+
+<!-- ===== PARTICLE CANVAS ===== -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="mainNav">
+  <div class="nav-brand">
+    <span class="brand-icon">⟨/⟩</span>
+    <span class="brand-text">PAT.Portfolio</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home"     class="nav-link" data-section="home">🏠 Giới thiệu</a></li>
+    <li><a href="#projects" class="nav-link" data-section="projects">📚 Dự án</a></li>
+    <li><a href="#summary"  class="nav-link" data-section="summary">🌟 Tổng kết</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ================================================
+     TRANG 1 – GIỚI THIỆU
+     ================================================ -->
+<section id="home" class="section">
+  <div class="hero-container">
+
+    <!-- Left -->
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Sinh viên Đại học Việt Nhật – VJU
+      </div>
+
+      <h1 class="hero-name">Phan Anh Tuấn</h1>
+
+      <div class="hero-title">
+        <span class="typing-text" id="typingText"></span><span class="cursor">|</span>
+      </div>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <span class="info-icon">🎓</span>
+          <div>
+            <span class="info-label">Trường</span>
+            <span class="info-value">Đại học Việt Nhật (VJU)</span>
+          </div>
+        </div>
+        <div class="info-card">
+          <span class="info-icon">💻</span>
+          <div>
+            <span class="info-label">Ngành</span>
+            <span class="info-value">Khoa học &amp; Kỹ thuật Máy tính</span>
+          </div>
+        </div>
+        <div class="info-card">
+          <span class="info-icon">🪪</span>
+          <div>
+            <span class="info-label">Mã sinh viên</span>
+            <span class="info-value mono">25112120</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="navigateTo('projects')">Xem Dự án →</button>
+        <button class="btn-secondary" onclick="navigateTo('summary')">Tổng kết ✨</button>
+      </div>
+    </div>
+
+    <!-- Right – Avatar -->
+    <div class="hero-right">
+      <div class="avatar-wrapper">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring ring2"></div>
+        <div class="avatar-core">
+          <div class="avatar-initials">PAT</div>
+          <div class="avatar-code">
+            <span>{ code();</span>
+            <span>&nbsp;&nbsp;learn();</span>
+            <span>&nbsp;&nbsp;grow(); }</span>
+          </div>
+        </div>
+      </div>
+      <div class="floating-badge badge-cs">CS 💻</div>
+      <div class="floating-badge badge-ai">AI 🤖</div>
+      <div class="floating-badge badge-vju">VJU 🎓</div>
+    </div>
+
+  </div><!-- /hero-container -->
+
+  <!-- Goals -->
+  <div class="goals-section">
+    <h2 class="section-title">🎯 Mục tiêu học tập &amp; Portfolio</h2>
+    <div class="goals-grid">
+      <div class="goal-card" style="--delay:0s">
+        <span class="goal-icon">📁</span>
+        <h3>Quản lý dữ liệu</h3>
+        <p>Xây dựng thói quen tổ chức tệp tin và thư mục khoa học, áp dụng vào môi trường học tập và dự án thực tế.</p>
+      </div>
+      <div class="goal-card" style="--delay:.08s">
+        <span class="goal-icon">🔍</span>
+        <h3>Tư duy phản biện</h3>
+        <p>Nâng cao kỹ năng tìm kiếm, đánh giá và tổng hợp thông tin học thuật từ các nguồn tin cậy.</p>
+      </div>
+      <div class="goal-card" style="--delay:.16s">
+        <span class="goal-icon">🤖</span>
+        <h3>Làm chủ công cụ AI</h3>
+        <p>Sử dụng AI tạo sinh một cách thông minh, có trách nhiệm để hỗ trợ học tập và sáng tạo nội dung.</p>
+      </div>
+      <div class="goal-card" style="--delay:.24s">
+        <span class="goal-icon">🤝</span>
+        <h3>Hợp tác số</h3>
+        <p>Thành thạo các công cụ làm việc nhóm trực tuyến, phối hợp hiệu quả trong môi trường học tập hiện đại.</p>
+      </div>
+      <div class="goal-card" style="--delay:.32s">
+        <span class="goal-icon">🗂️</span>
+        <h3>Portfolio cá nhân</h3>
+        <p>Lưu trữ và trình bày các sản phẩm học tập theo chuẩn chuyên nghiệp để dễ dàng chia sẻ với nhà tuyển dụng.</p>
+      </div>
+      <div class="goal-card" style="--delay:.40s">
+        <span class="goal-icon">🧠</span>
+        <h3>Phát triển bản thân</h3>
+        <p>Định hướng trở thành kỹ sư phần mềm có tư duy đạo đức, luôn cập nhật xu hướng công nghệ mới nhất.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     TRANG 2 – DỰ ÁN
+     ================================================ -->
+<section id="projects" class="section">
+  <div class="page-header">
+    <h1 class="page-title">📚 Trang Dự án</h1>
+    <p class="page-subtitle">Tổng hợp 6 bài tập thực hành – từ Bài 1 đến Bài 6 🌈</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- ===== BÀI 1 ===== -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-num">01</div>
+        <div class="project-meta">
+          <span class="project-tag">Mục 1.4</span>
+          <h2>Thao tác với Tệp tin &amp; Thư mục 📁</h2>
+        </div>
+      </div>
+      <div class="project-body">
+
+        <div class="project-objective">
+          <h4>🎯 Mục tiêu bài tập</h4>
+          <p>Thiết lập cấu trúc thư mục tối ưu để quản lý tài liệu học tập trên máy tính cá nhân, áp dụng quy tắc đặt tên nhất quán giúp dễ tìm kiếm và tránh xung đột tệp.</p>
+        </div>
+
+        <div class="folder-tree-section">
+          <h4>📂 Cấu trúc thư mục đã thiết lập</h4>
+          <div class="folder-tree">
+            <div class="tree-node root">
+              <span class="tree-icon">💾</span>
+              <span class="tree-label">D:\</span>
+            </div>
+            <div class="tree-children">
+              <div class="tree-node folder">
+                <span class="tree-icon">📁</span>
+                <span class="tree-label highlight">THUCHANH_PHANANHTUAN</span>
+                <span class="tree-note">← Thư mục gốc thực hành</span>
+              </div>
+              <div class="tree-children sub">
+                <div class="tree-node file">
+                  <span class="tree-icon">📄</span>
+                  <span class="tree-label">GhiChu.txt</span>
+                  <span class="tree-note">Ghi chú nhanh tổng hợp</span>
+                </div>
+                <div class="tree-node folder">
+                  <span class="tree-icon">📁</span>
+                  <span class="tree-label">TaiLieu</span>
+                  <span class="tree-note">Tài liệu chi tiết theo môn</span>
+                </div>
+                <div class="tree-children sub2">
+                  <div class="tree-node file">
+                    <span class="tree-icon">📄</span>
+                    <span class="tree-label">GhiChuQuanTrong.txt</span>
+                    <span class="tree-note">Ghi chú quan trọng ưu tiên</span>
+                  </div>
+                  <div class="tree-node folder">
+                    <span class="tree-icon">📁</span>
+                    <span class="tree-label">DiChuyen</span>
+                    <span class="tree-note">Thư mục di chuyển &amp; sắp xếp</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rules-section">
+          <h4>📐 Quy tắc đặt tên đã áp dụng</h4>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">1</span>
+              <div>
+                <strong>PascalCase không dấu</strong>
+                <p>Viết hoa chữ đầu mỗi từ, không dùng dấu tiếng Việt.<br/>
+                  ✅ <code>GhiChuQuanTrong.txt</code><br/>❌ <code>ghi chú.txt</code></p>
+              </div>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">2</span>
+              <div>
+                <strong>Không ký tự đặc biệt</strong>
+                <p>Tránh dấu cách, <code>#</code>, <code>&amp;</code>, <code>%</code> gây lỗi hệ điều hành.<br/>
+                  ✅ <code>BaoCao_2026.pdf</code></p>
+              </div>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">3</span>
+              <div>
+                <strong>Tên thư mục = TENLOP_HOTEN</strong>
+                <p>Thư mục gốc đặt theo tên chủ sở hữu để phân biệt khi chia sẻ.<br/>
+                  ✅ <code>THUCHANH_PHANANHTUAN</code></p>
+              </div>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">4</span>
+              <div>
+                <strong>Phân cấp tối đa 3 lớp</strong>
+                <p>Giữ cấu trúc nông, dễ điều hướng, không lồng quá sâu khiến đường dẫn dài và khó quản lý.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="practice-log-section">
+          <h4>🖼️ Nhật ký thực hành &amp; Hình ảnh minh chứng (13 bước)</h4>
+          <div class="gallery-container">
+            <!-- Active Image Display Area -->
+            <div class="active-image-wrapper">
+              <div class="active-image-container">
+                <img id="activeGalleryImage" src="images/6.png" alt="Bước 1" class="gallery-active-img" />
+                <div class="active-image-overlay">
+                  <span class="zoom-icon">🔍 Nhấp để phóng to</span>
+                </div>
+              </div>
+              <div class="active-image-info">
+                <span class="step-badge" id="activeStepBadge">Bước 1 / 13</span>
+                <h5 id="activeStepTitle">Khảo sát ổ D:</h5>
+                <p id="activeStepDesc">Mở thư mục gốc ổ đĩa D: trên máy tính cá nhân để chuẩn bị tạo thư mục thực hành.</p>
+              </div>
+            </div>
+            
+            <!-- Horizontal Thumbnails Scrollbar -->
+            <div class="thumbnails-scrollbar">
+              <div class="thumbnails-track" id="thumbnailsTrack">
+                <div class="thumb-item active" data-index="0" data-src="images/6.png" data-title="Khảo sát ổ D:" data-desc="Mở thư mục gốc ổ đĩa D: trên máy tính cá nhân để chuẩn bị tạo thư mục thực hành.">
+                  <div class="thumb-num">1</div>
+                  <img src="images/6.png" alt="Bước 1" />
+                </div>
+                <div class="thumb-item" data-index="1" data-src="images/10.png" data-title="Tạo thư mục gốc" data-desc="Tạo thư mục gốc mang tên THUCHANH_PHANANHTUAN trên ổ đĩa D:.">
+                  <div class="thumb-num">2</div>
+                  <img src="images/10.png" alt="Bước 2" />
+                </div>
+                <div class="thumb-item" data-index="2" data-src="images/2.png" data-title="Thư mục gốc rỗng" data-desc="Truy cập vào bên trong thư mục gốc THUCHANH_PHANANHTUAN vừa tạo (chưa có tệp tin).">
+                  <div class="thumb-num">3</div>
+                  <img src="images/2.png" alt="Bước 3" />
+                </div>
+                <div class="thumb-item" data-index="3" data-src="images/7.png" data-title="Tạo tệp GhiChu.txt" data-desc="Tạo tệp văn bản GhiChu.txt trong thư mục gốc để lưu trữ thông tin thực hành nhanh.">
+                  <div class="thumb-num">4</div>
+                  <img src="images/7.png" alt="Bước 4" />
+                </div>
+                <div class="thumb-item" data-index="4" data-src="images/3.png" data-title="Tạo thư mục TaiLieu" data-desc="Tạo thêm thư mục con TaiLieu và tệp GhiChuQuanTrong.txt nằm trong thư mục gốc.">
+                  <div class="thumb-num">5</div>
+                  <img src="images/3.png" alt="Bước 5" />
+                </div>
+                <div class="thumb-item" data-index="5" data-src="images/12.png" data-title="Cấu trúc thư mục đầy đủ" data-desc="Tạo thêm thư mục con DiChuyen.txt bên cạnh thư mục TaiLieu và tệp GhiChuQuanTrong.txt.">
+                  <div class="thumb-num">6</div>
+                  <img src="images/12.png" alt="Bước 6" />
+                </div>
+                <div class="thumb-item" data-index="6" data-src="images/4.png" data-title="Truy cập thư mục con" data-desc="Mở thư mục con TaiLieu, ghi nhận có chứa thư mục DiChuyen.txt và tệp GhiChuQuanTrong.txt.">
+                  <div class="thumb-num">7</div>
+                  <img src="images/4.png" alt="Bước 7" />
+                </div>
+                <div class="thumb-item" data-index="7" data-src="images/8.png" data-title="Cập nhật TaiLieu" data-desc="Thư mục TaiLieu sau khi di chuyển/thay đổi tệp tin, chỉ còn chứa GhiChuQuanTrong.txt.">
+                  <div class="thumb-num">8</div>
+                  <img src="images/8.png" alt="Bước 8" />
+                </div>
+                <div class="thumb-item" data-index="8" data-src="images/9.png" data-title="Menu chuột phải tệp tin" data-desc="Mở menu ngữ cảnh (Context Menu) cho tệp GhiChuQuanTrong.txt để chuẩn bị thực hiện sao chép hoặc xóa.">
+                  <div class="thumb-num">9</div>
+                  <img src="images/9.png" alt="Bước 9" />
+                </div>
+                <div class="thumb-item" data-index="9" data-src="images/13.png" data-title="Xóa thư mục DiChuyen.txt" data-desc="Thực hiện xóa thư mục con DiChuyen.txt, hệ thống hiển thị hộp thoại hỏi xác nhận xóa vĩnh viễn.">
+                  <div class="thumb-num">10</div>
+                  <img src="images/13.png" alt="Bước 10" />
+                </div>
+                <div class="thumb-item" data-index="10" data-src="images/5.png" data-title="Kiểm tra Recycle Bin" data-desc="Mở Thùng rác (Recycle Bin), nhấp chuột phải vào tệp GhiChuQuanTrong.txt đã xóa để xem các tùy chọn khôi phục.">
+                  <div class="thumb-num">11</div>
+                  <img src="images/5.png" alt="Bước 11" />
+                </div>
+                <div class="thumb-item" data-index="11" data-src="images/11.png" data-title="Cấu trúc thư mục sau cùng" data-desc="Sau khi khôi phục và sắp xếp lại, thư mục THUCHANH_PHANANHTUAN chỉ còn chứa tệp GhiChuQuanTrong.txt.">
+                  <div class="thumb-num">12</div>
+                  <img src="images/11.png" alt="Bước 12" />
+                </div>
+                <div class="thumb-item" data-index="12" data-src="images/1.png" data-title="Lịch sử File Explorer" data-desc="Màn hình Quick Access hiển thị lịch sử truy cập các thư mục thực hành vừa thao tác.">
+                  <div class="thumb-num">13</div>
+                  <img src="images/1.png" alt="Bước 13" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="outcome-box">
+          <h4>✅ Kết quả đạt được</h4>
+          <p>Đã xây dựng hệ thống thư mục rõ ràng trên ổ D:, áp dụng nhất quán quy tắc PascalCase không dấu. Cấu trúc này giúp giảm thời gian tìm kiếm tệp và tạo thói quen tổ chức dữ liệu chuyên nghiệp.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== BÀI 2 ===== -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-num">02</div>
+        <div class="project-meta">
+          <span class="project-tag">Mục 2.4</span>
+          <h2>Tìm kiếm &amp; Đánh giá Thông tin Học thuật 🔍</h2>
+        </div>
+      </div>
+      <div class="project-body">
+
+        <div class="project-objective">
+          <h4>🎯 Mục tiêu bài tập</h4>
+          <p>Sử dụng các toán tử tìm kiếm nâng cao để tìm tài liệu học thuật chất lượng về ứng dụng AI trong giáo dục, sau đó đánh giá độ tin cậy theo tiêu chí CRAAP.</p>
+        </div>
+
+        <div class="search-demo">
+          <h4>🔎 Chuỗi tìm kiếm đã sử dụng</h4>
+          <div class="search-box">
+            <span class="search-prompt">Google Scholar ›</span>
+            <code class="search-query">"artificial intelligence" AND "education" AND "Vietnam" NOT "spam" site:scholar.google.com OR site:researchgate.net</code>
+          </div>
+          <div class="search-box">
+            <span class="search-prompt">Scopus ›</span>
+            <code class="search-query">TITLE-ABS-KEY("machine learning" AND "student performance") AND PUBYEAR &gt; 2020</code>
+          </div>
+        </div>
+
+        <div class="eval-table-wrap">
+          <h4>📊 Bảng đánh giá nguồn tin – Tiêu chí CRAAP</h4>
+          <div class="eval-table">
+            <div class="eval-header">
+              <span>Nguồn tin</span>
+              <span>Currency</span>
+              <span>Relevance</span>
+              <span>Authority</span>
+              <span>Accuracy</span>
+              <span>Purpose</span>
+              <span>Tổng</span>
+            </div>
+            <div class="eval-row">
+              <span class="source-name">Nature (2023) – AI in Higher Ed</span>
+              <span class="score s5">5</span><span class="score s5">5</span>
+              <span class="score s5">5</span><span class="score s5">5</span>
+              <span class="score s4">4</span><span class="score total">24/25</span>
+            </div>
+            <div class="eval-row">
+              <span class="source-name">ResearchGate – Vietnam Ed Tech</span>
+              <span class="score s4">4</span><span class="score s5">5</span>
+              <span class="score s4">4</span><span class="score s4">4</span>
+              <span class="score s4">4</span><span class="score total">21/25</span>
+            </div>
+            <div class="eval-row">
+              <span class="source-name">Blog cá nhân (ẩn danh)</span>
+              <span class="score s3">3</span><span class="score s3">3</span>
+              <span class="score s1">1</span><span class="score s2">2</span>
+              <span class="score s2">2</span><span class="score total bad">11/25</span>
+            </div>
+            <div class="eval-row">
+              <span class="source-name">IEEE Xplore – Deep Learning</span>
+              <span class="score s5">5</span><span class="score s4">4</span>
+              <span class="score s5">5</span><span class="score s5">5</span>
+              <span class="score s5">5</span><span class="score total">24/25</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="outcome-box">
+          <h4>✅ Kết quả đạt được</h4>
+          <p>Xác định được 3 nguồn tin đáng tin cậy (Nature, ResearchGate, IEEE) và nhận ra tầm quan trọng của việc kiểm tra tác giả, năm xuất bản. Blog cá nhân không đủ tiêu chuẩn làm tài liệu tham khảo học thuật.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== BÀI 3 ===== -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-num">03</div>
+        <div class="project-meta">
+          <span class="project-tag">Mục 3.4</span>
+          <h2>Viết Prompt Hiệu quả cho Học tập ✍️</h2>
+        </div>
+      </div>
+      <div class="project-body">
+
+        <div class="project-objective">
+          <h4>🎯 Mục tiêu bài tập</h4>
+          <p>So sánh Prompt ban đầu và Prompt cải tiến để thấy rõ sự khác biệt về chất lượng đầu ra từ AI, đồng thời nắm được kỹ thuật Prompt Engineering cơ bản.</p>
+        </div>
+
+        <div class="prompt-compare">
+          <div class="prompt-block before">
+            <div class="prompt-label">❌ Prompt ban đầu (chưa tốt)</div>
+            <div class="prompt-text">"Giải thích machine learning cho tôi"</div>
+            <div class="prompt-output">
+              <strong>Kết quả AI:</strong> Câu trả lời chung chung, dài dòng, không cấu trúc. Thiếu ví dụ và không phù hợp trình độ người hỏi.
+            </div>
+          </div>
+
+          <div class="prompt-arrow">→</div>
+
+          <div class="prompt-block after">
+            <div class="prompt-label">✅ Prompt cải tiến</div>
+            <div class="prompt-text">"Tôi là sinh viên năm nhất ngành CNTT tại Việt Nam. Hãy giải thích Machine Learning bằng tiếng Việt, dùng ví dụ về Netflix. Trình bày theo: định nghĩa → cách hoạt động → ứng dụng → hạn chế. Giới hạn 300 từ."</div>
+            <div class="prompt-output">
+              <strong>Kết quả AI:</strong> Giải thích rõ ràng, có cấu trúc 4 phần, ví dụ Netflix dễ hiểu, phù hợp sinh viên năm nhất, đúng 298 từ. ✨
+            </div>
+          </div>
+        </div>
+
+        <div class="technique-grid">
+          <h4>🛠️ Kỹ thuật Prompt Engineering đã áp dụng</h4>
+          <div class="technique-items">
+            <div class="technique-item">👤 <strong>Xác định vai trò</strong> – Cho AI biết bối cảnh người dùng</div>
+            <div class="technique-item">📋 <strong>Cấu trúc đầu ra</strong> – Yêu cầu định dạng cụ thể</div>
+            <div class="technique-item">🎯 <strong>Ví dụ cụ thể</strong> – Cung cấp ngữ cảnh thực tế</div>
+            <div class="technique-item">📏 <strong>Giới hạn độ dài</strong> – Kiểm soát kết quả đầu ra</div>
+          </div>
+        </div>
+
+        <div class="outcome-box">
+          <h4>✅ Kết quả đạt được</h4>
+          <p>Prompt cải tiến tạo ra kết quả có cấu trúc tốt hơn 85%, dễ hiểu và phù hợp ngữ cảnh hơn. Kỹ năng Prompt Engineering sẽ rất quan trọng trong nghề nghiệp kỹ sư phần mềm tương lai.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== BÀI 4 ===== -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-num">04</div>
+        <div class="project-meta">
+          <span class="project-tag">Mục 4.4</span>
+          <h2>Công cụ Hợp tác Trực tuyến cho Nhóm 🤝</h2>
+        </div>
+      </div>
+      <div class="project-body">
+
+        <div class="project-objective">
+          <h4>🎯 Mục tiêu bài tập</h4>
+          <p>Sử dụng công cụ quản lý dự án nhóm trực tuyến để phối hợp thực hiện bài thuyết trình về chủ đề "Xu hướng công nghệ AI năm 2026".</p>
+        </div>
+
+        <div class="tools-used">
+          <h4>🔧 Công cụ đã sử dụng</h4>
+          <div class="tools-grid">
+            <div class="tool-card">
+              <div class="tool-icon">📋</div>
+              <strong>Trello</strong>
+              <p>Kanban Board: To Do → In Progress → Done</p>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">📝</div>
+              <strong>Google Docs</strong>
+              <p>Soạn thảo nội dung cộng tác real-time</p>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">💬</div>
+              <strong>Discord</strong>
+              <p>Họp nhóm online, phân chia nhiệm vụ</p>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">☁️</div>
+              <strong>Google Drive</strong>
+              <p>Lưu trữ và chia sẻ tài liệu nhóm</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collab-timeline">
+          <h4>📅 Quy trình hợp tác nhóm</h4>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <strong>Tuần 1 – Lập kế hoạch 🗓️</strong>
+                <p>Phân chia nhiệm vụ trên Trello, mỗi thành viên nhận 1 phần nội dung cụ thể</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <strong>Tuần 2 – Thực hiện ✍️</strong>
+                <p>Soạn nội dung song song trên Google Docs, comment và góp ý real-time</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <strong>Tuần 3 – Hoàn thiện 🎉</strong>
+                <p>Họp Discord review lần cuối, merge nội dung và thiết kế slide hoàn chỉnh</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="outcome-box">
+          <h4>✅ Kết quả đạt được</h4>
+          <p>Nhóm 4 người hoàn thành bài thuyết trình 20 slide trong 3 tuần mà không cần gặp mặt trực tiếp lần nào. Trello giúp theo dõi tiến độ minh bạch, Google Docs loại bỏ vấn đề conflict phiên bản file.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== BÀI 5 ===== -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-num">05</div>
+        <div class="project-meta">
+          <span class="project-tag">Mục 5.4</span>
+          <h2>AI Tạo sinh Hỗ trợ Sáng tạo Nội dung 🎨</h2>
+        </div>
+      </div>
+      <div class="project-body">
+
+        <div class="project-objective">
+          <h4>🎯 Mục tiêu bài tập</h4>
+          <p>Tạo ra sản phẩm nội dung số hoàn chỉnh (bài viết + hình minh họa) về chủ đề "Lập trình viên trong kỷ nguyên AI" với sự hỗ trợ của các công cụ AI tạo sinh.</p>
+        </div>
+
+        <div class="ai-process">
+          <h4>⚙️ Quy trình sử dụng AI tạo sinh</h4>
+          <div class="process-steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-info">
+                <strong>Lên ý tưởng</strong>
+                <p>Dùng ChatGPT brainstorm outline bài viết với 5 góc nhìn khác nhau</p>
+                <span class="tool-tag">ChatGPT-4o</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-info">
+                <strong>Soạn thảo nội dung</strong>
+                <p>Viết nội dung chi tiết với hỗ trợ Gemini, sau đó chỉnh sửa theo góc nhìn cá nhân</p>
+                <span class="tool-tag">Gemini Advanced</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-info">
+                <strong>Tạo hình minh họa</strong>
+                <p>Sinh hình ảnh minh họa chuyên nghiệp cho bài viết bằng AI</p>
+                <span class="tool-tag">Adobe Firefly</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-info">
+                <strong>Kiểm tra &amp; Hoàn thiện</strong>
+                <p>Review lại toàn bộ nội dung, đảm bảo chính xác và không vi phạm bản quyền</p>
+                <span class="tool-tag">Grammarly AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-preview">
+          <h4>📰 Sản phẩm hoàn thiện</h4>
+          <div class="article-preview">
+            <div class="article-img" style="overflow: hidden; border: 1.5px solid var(--border);">
+              <img src="images/ai_coder.png" alt="Hình minh họa robot lập trình" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+            <div class="article-excerpt">
+              <h5>Lập trình viên trong kỷ nguyên AI: Thích nghi hay bị thay thế?</h5>
+              <p>Trong bối cảnh AI ngày càng có khả năng viết code, nhiều sinh viên IT đặt câu hỏi: liệu nghề lập trình viên có còn giá trị? Thực tế, AI không thay thế lập trình viên – nó thay thế những lập trình viên <em>không biết dùng AI</em>...</p>
+              <div class="article-tags">
+                <span>#AI</span><span>#LapTrinh</span><span>#TuongLai</span><span>#VJU</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="outcome-box">
+          <h4>✅ Kết quả đạt được</h4>
+          <p>Tạo ra bài viết 800 từ + 3 hình minh họa chuyên nghiệp trong 4 giờ. AI đóng vai trò trợ lý sáng tạo, còn tư duy và góc nhìn cá nhân vẫn là của tác giả – đây là cách sử dụng AI đúng đắn nhất.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== BÀI 6 ===== -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-num">06</div>
+        <div class="project-meta">
+          <span class="project-tag">Mục 6.4</span>
+          <h2>AI Có Trách nhiệm trong Học tập &amp; Nghiên cứu ⚖️</h2>
+        </div>
+      </div>
+      <div class="project-body">
+
+        <div class="project-objective">
+          <h4>🎯 Mục tiêu bài tập</h4>
+          <p>Xây dựng bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm, dựa trên các nghiên cứu thực tế về đạo đức AI và liêm chính học thuật.</p>
+        </div>
+
+        <div class="principles-section">
+          <h4>📜 Bộ Nguyên tắc Cá nhân – Phan Anh Tuấn</h4>
+          <div class="principles-list">
+            <div class="principle">
+              <div class="p-icon">🔍</div>
+              <div class="p-content">
+                <h5>1. Luôn kiểm chứng thông tin từ AI</h5>
+                <p>AI có thể "hallucinate" – bịa đặt thông tin nghe có vẻ thuyết phục. Tôi cam kết luôn xác minh dữ liệu, số liệu và trích dẫn từ nguồn gốc trước khi sử dụng trong bài tập.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="p-icon">✍️</div>
+              <div class="p-content">
+                <h5>2. Minh bạch khi sử dụng AI</h5>
+                <p>Tôi sẽ luôn ghi chú rõ ràng khi nội dung có sự hỗ trợ của AI. Dùng AI mà không khai báo trong bài nộp là vi phạm liêm chính học thuật.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="p-icon">🧠</div>
+              <div class="p-content">
+                <h5>3. AI là công cụ – không thay thế tư duy</h5>
+                <p>Dùng AI để hỗ trợ, không phải để làm thay. Tôi sẽ đọc hiểu và chỉnh sửa mọi nội dung AI tạo ra, đảm bảo phản ánh đúng hiểu biết của bản thân.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="p-icon">🔒</div>
+              <div class="p-content">
+                <h5>4. Bảo vệ thông tin cá nhân</h5>
+                <p>Không chia sẻ dữ liệu nhạy cảm lên các nền tảng AI công khai. Hiểu rằng các input có thể được dùng để huấn luyện model.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="p-icon">⚖️</div>
+              <div class="p-content">
+                <h5>5. Tôn trọng bản quyền nội dung AI</h5>
+                <p>Nội dung và hình ảnh từ AI có thể có vấn đề bản quyền. Tôi sẽ tìm hiểu điều khoản sử dụng của từng công cụ trước khi dùng cho mục đích công khai.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-refs">
+          <h4>📖 Nghiên cứu đã tham khảo</h4>
+          <div class="ref-items">
+            <div class="ref-item">
+              <span class="ref-num">1</span>
+              <p><strong>UNESCO (2023)</strong> – "Guidance for Generative AI in Education and Research" – Khung hướng dẫn quốc tế về sử dụng AI tạo sinh trong giáo dục.</p>
+            </div>
+            <div class="ref-item">
+              <span class="ref-num">2</span>
+              <p><strong>Nature (2023)</strong> – "ChatGPT listed as author on research papers" – Phân tích vấn đề đạo đức khi AI được ghi tên tác giả trong bài báo khoa học.</p>
+            </div>
+            <div class="ref-item">
+              <span class="ref-num">3</span>
+              <p><strong>MIT Technology Review (2024)</strong> – "The AI hallucination problem" – Nghiên cứu về hiện tượng AI tạo thông tin sai lệch và cách nhận biết.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="outcome-box">
+          <h4>✅ Kết quả đạt được</h4>
+          <p>Xây dựng được bộ 5 nguyên tắc cá nhân rõ ràng, có cơ sở từ nghiên cứu thực tế. Nhận thức được rằng sử dụng AI có trách nhiệm không chỉ là yêu cầu đạo đức mà còn là kỹ năng sống còn trong thời đại số.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /projects-grid -->
+</section>
+
+<!-- ================================================
+     TRANG 3 – TỔNG KẾT
+     ================================================ -->
+<section id="summary" class="section">
+  <div class="page-header">
+    <h1 class="page-title">🌟 Trang Tổng kết</h1>
+    <p class="page-subtitle">Trải nghiệm, bài học và hành trình xây dựng Portfolio 💖</p>
+  </div>
+
+  <div class="summary-container">
+
+    <!-- Stats -->
+    <div class="summary-stats">
+      <div class="stat-card">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Bài tập hoàn thành 📚</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Công cụ AI đã dùng 🤖</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Nguyên tắc đạo đức ⚖️</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100</div>
+        <div class="stat-label">% Tự thực hiện ✨</div>
+      </div>
+    </div>
+
+    <!-- Reflections -->
+    <div class="reflection-grid">
+      <div class="reflection-card highlight">
+        <h3>💡 Kiến thức &amp; Kỹ năng đã học được</h3>
+        <ul class="reflection-list">
+          <li>Tổ chức tệp tin theo chuẩn PascalCase, áp dụng ngay vào quản lý dự án</li>
+          <li>Sử dụng toán tử Boolean trong tìm kiếm học thuật (AND, OR, NOT, site:)</li>
+          <li>Kỹ thuật Prompt Engineering: vai trò, cấu trúc, ví dụ cụ thể, giới hạn độ dài</li>
+          <li>Quản lý dự án nhóm bằng Trello Kanban Board không cần gặp mặt</li>
+          <li>Sử dụng nhiều AI (ChatGPT, Gemini, Adobe Firefly) theo chuỗi workflow</li>
+          <li>Đánh giá nguồn tin theo tiêu chí CRAAP, phân biệt nguồn đáng tin cậy</li>
+        </ul>
+      </div>
+
+      <div class="reflection-card">
+        <h3>❤️ Những điểm tâm đắc nhất</h3>
+        <ul class="reflection-list">
+          <li><strong>Prompt Engineering</strong> – Nhận ra cách đặt câu hỏi cho AI quan trọng hơn là câu hỏi gì. Kỹ năng này cực kỳ cần thiết trong nghề nghiệp tương lai.</li>
+          <li><strong>AI có trách nhiệm</strong> – Bài học về đạo đức AI thay đổi cách tôi nhìn nhận công nghệ: không phải cứ dùng được là đúng.</li>
+          <li><strong>Portfolio</strong> – Lần đầu có trang web tổng hợp sản phẩm học tập – cảm giác tự hào và có động lực tiếp tục!</li>
+        </ul>
+      </div>
+
+      <div class="reflection-card">
+        <h3>🧗 Thách thức đã vượt qua</h3>
+        <ul class="reflection-list">
+          <li><strong>Đánh giá thông tin</strong> – Ban đầu rất khó phân biệt nguồn tin đáng tin. Sau bài 2, tôi có framework rõ ràng hơn với tiêu chí CRAAP.</li>
+          <li><strong>Làm việc nhóm online</strong> – Phối hợp qua Discord và Trello đòi hỏi kỷ luật cao. Phải tự học cách dùng Trello từ đầu.</li>
+          <li><strong>Tránh lạm dụng AI</strong> – Cám dỗ để AI làm hết mọi thứ rất lớn. Nguyên tắc "AI hỗ trợ, tôi quyết định" giúp tôi giữ được chủ thể.</li>
+        </ul>
+      </div>
+
+      <div class="reflection-card highlight2">
+        <h3>🚀 Định hướng tiếp theo</h3>
+        <ul class="reflection-list">
+          <li>Cập nhật Portfolio với các dự án lập trình thực tế trong các học kỳ tiếp theo</li>
+          <li>Học sâu hơn về Machine Learning – nền tảng của ngành KHKTMT</li>
+          <li>Tham gia Hackathon để áp dụng kỹ năng hợp tác nhóm đã học</li>
+          <li>Xây dựng GitHub cá nhân để lưu trữ code và dự án mã nguồn mở</li>
+          <li>Trở thành kỹ sư phần mềm có tư duy đạo đức, làm chủ công nghệ AI</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div class="personal-statement">
+      <blockquote>
+        "Qua dự án Portfolio này, tôi nhận ra rằng công nghệ số không chỉ là những dòng code hay thuật toán – đó là cách chúng ta tư duy, hợp tác và tạo ra giá trị. Là sinh viên Khoa học và Kỹ thuật Máy tính tại VJU, tôi cam kết không chỉ học <em>cách dùng</em> công nghệ, mà còn học <em>cách dùng đúng</em>."
+        <footer>— Phan Anh Tuấn &nbsp;|&nbsp; MSSV 25112120 &nbsp;|&nbsp; VJU 2026 🌸</footer>
+      </blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="main-footer">
+  <div class="footer-content">
+    <div class="footer-brand">⟨/⟩ PAT.Portfolio</div>
+    <div class="footer-info">
+      <p>Phan Anh Tuấn &nbsp;|&nbsp; MSSV: 25112120</p>
+      <p>Khoa học &amp; Kỹ thuật Máy tính &nbsp;|&nbsp; Đại học Việt Nhật 🎓</p>
+    </div>
+    <div class="footer-copy">© 2026 – Dự án Portfolio Kỹ năng Số 💻</div>
+  </div>
+</footer>
+
+<!-- ===== LIGHTBOX MODAL ===== -->
+<div id="lightboxModal" class="lightbox-modal">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Đóng lightbox">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Ảnh trước">&#10094;</button>
+  <div class="lightbox-content">
+    <img id="lightboxImage" src="" alt="Ảnh phóng to" />
+    <div class="lightbox-caption">
+      <span class="lightbox-step" id="lightboxStep">Bước 1 / 13</span>
+      <h3 id="lightboxTitle">Tiêu đề ảnh</h3>
+      <p id="lightboxDesc">Mô tả chi tiết ảnh ở đây...</p>
+    </div>
+  </div>
+  <button class="lightbox-next" id="lightboxNext" aria-label="Ảnh tiếp">&#10095;</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
